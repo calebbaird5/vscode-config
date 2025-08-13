@@ -260,7 +260,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.editor.tabActionUnpinVisibility": false,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "redhat.telemetry.enabled": true,
   "Org-vscode.folderPath": "/Users/calebbaird/org-vscode",
   "workbench.editor.showTabs": "none",

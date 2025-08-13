@@ -1,10 +1,24 @@
 // Place your key bindings in this file to override the defaults
 [
+  // accept copilot suggestions the way I am used to it (:
   {
     "key": "shift+tab",
     "command": "editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionVisible && editorTextFocus"
   },
+
+  {
+    "key": "cmd+i",
+    "command": "inlineChat.start"
+  },
+
+  // unbind this for use in vimish things
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+
+  // vimish copilot navigation
   {
     "key": "ctrl+w h",
     "command": "workbench.action.focusActiveEditorGroup",
@@ -56,84 +70,50 @@
     "command": "workbench.action.closeActiveEditor",
     "when": "inChatEditor"
   },
+
+  // Vimish panel navigation
   {
     "key": "ctrl+w k",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   {
     "key": "ctrl+w m",
-    "command": "terminalAllInOne.toggleMaxTerm",
-    "when": "terminalFocus"
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "panelFocus"
   },
   {
-    "key": "ctrl+w a",
-    "command": "terminalAllInOne.createNewTerminal",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+w r",
-    "command": "terminalAllInOne.renameCurrentTerminal",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+w n",
-    "command": "terminalAllInOne.focusNextTerminal",
-    "when": "terminalFocus"
-  },
-  {
-     "key": "ctrl+w up",
+     "key": "ctrl+shift+w+k",
     "command": "workbench.action.terminal.resizePaneUp",
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   {
-    "key": "ctrl+w down",
+    "key": "ctrl+shift+w+j",
     "command": "workbench.action.terminal.resizePaneDown",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+w p",
-    "command": "terminalAllInOne.focusPreviousTerminal",
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   {
     "key": "ctrl+w l",
-    "command": "workbench.action.chat.focusInput",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+w q",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus"
-  },
-
-  {
-    "key": "ctrl+w v",
-    "command": "workbench.action.terminal.split",
-    "when": "terminalFocus"
+    "command": "workbench.action.nextPanelView",
+    "when": "panelFocus"
   },
   {
     "key": "ctrl+w h",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
+    "command": "workbench.action.previousPanelView",
+    "when": "panelFocus"
   },
   {
-    "key": "ctrl+u",
-    "command": "workbench.action.terminal.scrollPageUp",
-    "when": "terminalFocus"
+    "key": "ctrl+w q",
+    "command": "workbench.action.closePanel",
+    "when": "panelFocus"
   },
-  {
-    "key": "ctrl+d",
-    "command": "workbench.action.terminal.scrollPageDown",
-    "when": "terminalFocus"
-  },
+
+  // MAGIT vim bindings
   {
     "key": "g g",
     "command": "cursorTop",
     "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
   },
-
-  // MAGIT vim bindings
   {
     "key": "g r",
     "command": "magit.refresh",
@@ -192,15 +172,11 @@
     "key": "ctrl+u x",
     "command": "-magit.reset-hard"
   },
-  // Magit vim bindings done \
 
+  // Help with identifying valid where clauses and other low level stuff
   {
     "key": "cmd+alt+i",
     "command": "workbench.action.toggleDevTools"
-  },
-  {
-    "key": "cmd+i",
-    "command": "inlineChat.start"
   },
   {
     "key": "shift+cmd+c",
@@ -211,11 +187,8 @@
     "key": "shift+cmd+c",
     "command": "workbench.action.inspectContextKeys"
   },
-  {
-    "key": "ctrl+w",
-    "command": "-workbench.action.switchWindow"
-  },
-  // allow leader key to work in vscode-dired buffers
+
+  // Dired config
   {
     "key": "space",
     "commands": [

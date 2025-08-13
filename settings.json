@@ -152,6 +152,10 @@
     },
     "SPC t W": {
       "name": "Toggle Line Wrap",
+      "command": "editor.action.toggleRenderWhitespace"
+    },
+    "SPC t w": {
+      "name": "Toggle Line Wrap",
       "command": "editor.action.toggleWordWrap"
     },
     "SPC t C": {
@@ -260,7 +264,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.editor.tabActionUnpinVisibility": false,
-  "editor.renderWhitespace": "all",
   "redhat.telemetry.enabled": true,
   "Org-vscode.folderPath": "/Users/calebbaird/org-vscode",
   "workbench.editor.showTabs": "none",
@@ -293,4 +296,5 @@
       ]
   },
   "terminal.external.osxExec": "iTerm.app",
+  "editor.renderWhitespace": "none",
 }

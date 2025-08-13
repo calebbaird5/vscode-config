@@ -1,0 +1,237 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "shift+tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "inChatEditor"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "inChatEditor"
+  },
+  {
+    "key": "ctrl+w j",
+    "command": "workbench.action.focusPanel",
+    "when": "inChatEditor"
+  },
+  {
+    "key": "ctrl+w a",
+    "command": "workbench.action.chat.openAgent",
+    "when": "auxiliaryBarFocus || inChatEditor"
+  },
+  {
+    "key": "ctrl+w c",
+    "command": "workbench.action.chat.openAsk",
+    "when": "auxiliaryBarFocus || inChatEditor"
+  },
+  {
+    "key": "ctrl+w e",
+    "command": "workbench.action.chat.openEdit",
+    "when": "auxiliaryBarFocus || inChatEditor"
+  },
+  {
+    "key": "ctrl+w n",
+    "command": "workbench.action.chat.newChat",
+    "when": "auxiliaryBarFocus || inChatEditor"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeAuxiliaryBar",
+    "when": "auxiliaryBarFocus"
+
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "inChatEditor"
+  },
+  {
+    "key": "ctrl+w k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w m",
+    "command": "terminalAllInOne.toggleMaxTerm",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w a",
+    "command": "terminalAllInOne.createNewTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w r",
+    "command": "terminalAllInOne.renameCurrentTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w n",
+    "command": "terminalAllInOne.focusNextTerminal",
+    "when": "terminalFocus"
+  },
+  {
+     "key": "ctrl+w up",
+    "command": "workbench.action.terminal.resizePaneUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w down",
+    "command": "workbench.action.terminal.resizePaneDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w p",
+    "command": "terminalAllInOne.focusPreviousTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.chat.focusInput",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+
+  {
+    "key": "ctrl+w v",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "workbench.action.terminal.scrollPageUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.terminal.scrollPageDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "g g",
+    "command": "cursorTop",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+
+  // MAGIT vim bindings
+  {
+    "key": "g r",
+    "command": "magit.refresh",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "tab",
+    "command": "extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && !inlineEditIsVisible && editorLangId != 'magit'"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab"
+  },
+  {
+    "key": "x",
+    "command": "magit.discard-at-point",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "k",
+    "command": "-magit.discard-at-point"
+  },
+  {
+    "key": "-",
+    "command": "magit.reverse-at-point",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "v",
+    "command": "-magit.reverse-at-point"
+  },
+  {
+    "key": "shift+-",
+    "command": "magit.reverting",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "shift+v",
+    "command": "-magit.reverting"
+  },
+  {
+    "key": "shift+o",
+    "command": "magit.resetting",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "shift+x",
+    "command": "-magit.resetting"
+  },
+  {
+    "key": "x",
+    "command": "-magit.reset-mixed"
+  },
+  {
+    "key": "ctrl+u x",
+    "command": "-magit.reset-hard"
+  },
+  // Magit vim bindings done \
+
+  {
+    "key": "cmd+alt+i",
+    "command": "workbench.action.toggleDevTools"
+  },
+  {
+    "key": "cmd+i",
+    "command": "inlineChat.start"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "workbench.action.inspectContextKeys"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  // allow leader key to work in vscode-dired buffers
+  {
+    "key": "space",
+    "commands": [
+      { "command": "_setContext", "args": ["leaderkeyState", "SPC"] },
+      { "command": "leaderkey.render", "args": "SPC" }
+    ],
+    "when":"dired.open"
+  },
+  {
+    "key": "ctrl+x ctrl+q",
+    "command": "extension.dired.toggleReadOnly",
+    "when":"dired.open"
+  },
+  {
+    "key": "ctrl+c ctrl+c",
+    "command": "extension.dired.wdired.commit",
+    "when":"dired.open"
+  },
+]

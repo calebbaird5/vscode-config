@@ -1,0 +1,296 @@
+{
+  "zenMode.restore": true,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "none",
+  "zenMode.hideStatusBar": false,
+  "zenMode.centerLayout": false,
+  "window.newWindowDimensions": "maximized",
+  "git.openRepositoryInParentFolders": "always",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "underline",
+  "vim.cursorStylePerMode.visual": "block-outline",
+  "vim.useSystemClipboard": true,
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "version": "v1",
+      "prodToken": "foo",
+      "nonProdToken": "bar"
+    },
+    "local": {
+      "baseUrl": "http://localhost:5200/api/v1",
+      "version": "v2",
+      "host": "localhost",
+      "token": "{{$shared nonProdToken}}",
+      "secretKey": "build/src/bubble-trouble"
+    },
+    "production": {
+      "host": "example.com",
+      "token": "{{$shared prodToken}}",
+      "secretKey": "prodSecret"
+    }
+  },
+  "editor.inlineSuggest.enabled": true,
+  "cmake.configureOnOpen": true,
+  "cmake.configureSettings": {},
+  "cmake.generator": "Ninja", // or "Unix Makefiles"
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  "C_Cpp_Runner.debuggerPath": "lldb",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.minimap.enabled": false,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.options.statusBarVisibility": "visible",
+  "lldb-dap.executable-path": "/opt/homebrew/opt/llvm/bin//lldb-dap",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "workbench.settings.openDefaultKeybindings": true,
+  "vim.insertModeKeyBindings": [],
+  "github.copilot.chat.testGeneration.instructions": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": [
+        { "command": "_setContext", "args": ["leaderkeyState", "SPC"] },
+        { "command": "leaderkey.render", "args": "SPC" }
+      ]
+    },
+    {
+      "before": [","],
+      "commands": [
+        { "command": "_setContext", "args": ["leaderkeyState", ","] },
+        { "command": "leaderkey.render", "args": "," }
+      ]
+    },
+    {
+      "before": ["g"],
+      "commands": [
+        { "command": "_setContext", "args": ["leaderkeyState", "g"] },
+        { "command": "leaderkey.render", "args": "g" }
+      ]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": [
+        { "command": "_setContext", "args": ["leaderkeyState", "SPC"] },
+        { "command": "leaderkey.render", "args": "SPC" }
+      ]
+    },
+    {
+      "before": [","],
+      "commands": [
+        { "command": "_setContext", "args": ["leaderkeyState", ","] },
+        { "command": "leaderkey.render", "args": "," }
+      ]
+    }
+  ],
+  "leaderkey.overrides.user": {
+    "SPC /": {
+      "name": "Search in project",
+      "command": "leaderkey.ripgrep",
+      "args": {
+        "query": { "type": "selection-only" },
+        "dir":  { "type": "workspace" }
+      }
+    },
+    "SPC ?": {
+      "name": "vscode search project",
+      "command": "workbench.action.findInFiles"
+    },
+    "SPC c g": {
+      "name": "copilot generate this",
+      "command": "github.copilot.chat.generate"
+    },
+    "SPC c a": {
+      "name": "Code Action",
+      "command": "editor.action.quickFix"
+    },
+    "SPC c r": {
+      "name": "Rename",
+      "command": "editor.action.rename"
+    },
+    "SPC c R": {
+      "name": "Refactor",
+      "command": "editor.action.refactor"
+    },
+    "SPC h t": {
+      "name": "Change the active theme",
+      "command": "workbench.action.selectTheme"
+    },
+    "SPC h s": {
+      "name": "Settings json",
+      "command": "workbench.action.openSettingsJson"
+    },
+    "SPC h S": {
+      "name": "Settings GUI",
+      "command": "workbench.action.openSettings"
+    },
+    "SPC h K": {
+      "name": "Code Action",
+      "command": "leaderkey.searchBindings"
+    },
+    "SPC h e": {
+      "name": "Extensions",
+      "command": "workbench.extensions.action.focusExtensionsView"
+    },
+    "SPC h M": {
+      "name": "Change Mode",
+      "command": "workbench.action.editor.changeLanguageMode"
+    },
+    "SPC t z": {
+      "name": "Toggle Zen Mode",
+      "command": "workbench.action.toggleZenMode"
+    },
+    "SPC t W": {
+      "name": "Toggle Line Wrap",
+      "command": "editor.action.toggleWordWrap"
+    },
+    "SPC t C": {
+      "name": "Toggle Copilot panel",
+      "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    "SPC o t": {
+      "name": "Toggle Terminal",
+      "command": "workbench.action.togglePanel"
+    },
+    "SPC o T": {
+      "name": "Create Terminal in editor area",
+      "command": "workbench.action.createTerminalEditor"
+    },
+    "SPC o c": "Copilot Chat",
+    "SPC o c c": {
+      "name": "Open chat (Ask)",
+      "command": "workbench.action.chat.openAsk"
+    },
+    "SPC o c a": {
+      "name": "Open agent",
+      "command": "workbench.action.chat.openAgent"
+    },
+    "SPC o c e": {
+      "name": "Open edit",
+      "command": "workbench.action.chat.openEdit"
+    },
+    "SPC o C": {
+      "name": "Open Copilot Chat in editor",
+      "command": "workbench.action.chat.openInEditor"
+    },
+    "SPC o D": {
+      "name": "Open Dired here",
+      "command": "extension.dired.open"
+    },
+    "SPC p n": {
+      "name": "New Project",
+      "command": "workbench.action.create "
+    },
+    ", h": "Hover...",
+    ", h t": {
+      "name": "show type",
+      "command": "editor.action.showDefinitionPreviewHover"
+    },
+    "SPC `": {
+      "name": "Last Buffer",
+      "command": "alternator.switch"
+    },
+    "SPC g": "Git",
+    "SPC g g": {
+      "name": "Magit Status",
+      "command": "magit.status"
+    },
+    "g g": {
+      "name": "Go to the top of the file",
+      "command": "cursorTop"
+    },
+    "g b": {
+      "name": "Go Back",
+      "command": "workbench.action.navigateBack"
+    },
+    "g d": {
+      "name": "Go to Definition",
+      "command": "editor.action.revealDefinition"
+    },
+    "g D": {
+      "name": "Go to Declaration",
+      "command": "editor.action.revealDeclaration"
+    },
+    "g i": {
+      "name": "Go to Implementation",
+      "command": "editor.action.revealImplementation"
+    },
+    "g r": {
+      "name": "Go to References",
+      "command": "editor.action.revealReferences"
+    },
+    "g e": {
+      "name": "Go to Next Error",
+      "command": "editor.action.marker.next"
+    },
+    "g c": "Comment...",
+    "g c c": {
+      "name": "Comment Line",
+      "command": "editor.action.commentLine"
+    },
+    "SPC SPC": {
+      "name": "Quick Open",
+      "command": "workbench.action.quickOpen"
+    },
+    "SPC :": {
+      "name": "Command Palette",
+      "command": "workbench.action.showCommands"
+    },
+    "SPC p s": {
+      "name": "Save All",
+      "command": "workbench.action.files.saveAll"
+    }
+  },
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.highlightModifiedTabs": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.tabActionUnpinVisibility": false,
+  "editor.renderWhitespace": "none",
+  "redhat.telemetry.enabled": true,
+  "Org-vscode.folderPath": "/Users/calebbaird/org-vscode",
+  "workbench.editor.showTabs": "none",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorTheme": "Solarized Dark",
+  "editor.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.profiles.osx": {
+    "tmux-shell": {
+      "path": "tmux",
+      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+    }
+  },
+  "editor.fontLigatures": "Symbola",
+  "makefile.configureOnOpen": true,
+  "leaderkey.dired.exe": "/opt/homebrew/bin/gls",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.editor.enableCodeActions": false,
+  "protoc": {
+      "compile_on_save": false,
+      "options": [
+          "--proto_path=${workspaceRoot}/proto",
+          "--go_out=.",
+          "--go-grpc_out=."
+      ]
+  },
+  "terminal.external.osxExec": "iTerm.app",
+}

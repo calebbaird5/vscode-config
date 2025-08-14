@@ -6,8 +6,9 @@ USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$USER_DIR"
 
 # install local extensions in the ./extensions directory
-for ext in ./extensions/*; do
-    if [ -d "$ext" ]; then
+for ext in $SCRIPT_DIR/extensions/*; do
+    # if the item is a .vsix file install it
+        if [ -f "$ext" ] && [[ "$ext" == *.vsix ]]; then
         echo "Installing local extension: $ext"
         code --install-extension "$ext"
     fi

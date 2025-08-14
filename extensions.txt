@@ -1,8 +1,8 @@
 4ops.terraform
 asvetliakov.vscode-neovim
-at-ishikawa.vscode-dired-mode
 attilabuti.vscode-mjml
 bobbyboyd.vs-org
+calebbaird.leaderkey-configurable
 dbaeumer.vscode-eslint
 docker.docker
 dsznajder.es7-react-js-snippets
@@ -15,7 +15,6 @@ github.copilot
 github.copilot-chat
 golang.go
 humao.rest-client
-jimmyzjx.leaderkey
 jimmyzjx.remote-commons
 kahole.magit
 lanza.lldb-vscode
@@ -49,9 +48,11 @@ rbremont.vscode-handlebars-mjml
 realdestroyer.org-vscode
 redhat.java
 ryuta46.multi-command
+sammy.clipboard-manager-with-cycling
 tootone.org-mode
 twxs.cmake
 tyriar.vscode-terminal-here
+usernamehw.errorlens
 vadimcn.vscode-lldb
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode

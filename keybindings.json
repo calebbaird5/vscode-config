@@ -17,12 +17,27 @@
     "key": "ctrl+w",
     "command": "-workbench.action.switchWindow"
   },
+  {
+    "key": "cmd+`",
+    "command": "workbench.action.switchWindow"
+  },
 
   // vimish copilot navigation
   {
     "key": "ctrl+w h",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+shift+space",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        { "command": "_setContext", "args": ["leaderkeyState", "SPC"] },
+        { "command": "leaderkey.render", "args": "SPC" }
+      ]
+    },
+    "when": "!panelFocus && !auxiliaryBarFocus"
   },
   {
     "key": "ctrl+w h",
@@ -83,14 +98,14 @@
     "when": "panelFocus"
   },
   {
-     "key": "ctrl+shift+w+k",
+    "key": "alt+ctrl+k",
     "command": "workbench.action.terminal.resizePaneUp",
-    "when": "panelFocus"
+    "when": "panelVisible"
   },
   {
-    "key": "ctrl+shift+w+j",
+    "key": "alt+ctrl+j",
     "command": "workbench.action.terminal.resizePaneDown",
-    "when": "panelFocus"
+    "when": "panelVisible"
   },
   {
     "key": "ctrl+w l",
@@ -195,16 +210,16 @@
       { "command": "_setContext", "args": ["leaderkeyState", "SPC"] },
       { "command": "leaderkey.render", "args": "SPC" }
     ],
-    "when":"dired.open"
+    "when": "dired.open"
   },
   {
     "key": "ctrl+x ctrl+q",
     "command": "extension.dired.toggleReadOnly",
-    "when":"dired.open"
+    "when": "dired.open"
   },
   {
     "key": "ctrl+c ctrl+c",
     "command": "extension.dired.wdired.commit",
-    "when":"dired.open"
+    "when": "dired.open"
   },
 ]

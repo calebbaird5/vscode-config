@@ -75,7 +75,11 @@
     {
       "before": ["K"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
-    }
+    },
+    {
+      "before": ["<Tab>"],
+      "commands": ["editor.action.formatSelection"],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -91,7 +95,11 @@
         { "command": "_setContext", "args": ["leaderkeyState", ","] },
         { "command": "leaderkey.render", "args": "," }
       ]
-    }
+    },
+    {
+      "before": ["<Tab>"],
+      "commands": ["editor.action.formatSelection"],
+    },
   ],
   "leaderkey.overrides.user": {
     "SPC /": {
@@ -99,7 +107,7 @@
       "command": "leaderkey.ripgrep",
       "args": {
         "query": { "type": "selection-only" },
-        "dir":  { "type": "workspace" }
+        "dir": { "type": "workspace" }
       }
     },
     "SPC ?": {
@@ -146,6 +154,16 @@
       "name": "Change Mode",
       "command": "workbench.action.editor.changeLanguageMode"
     },
+    "SPC y": "yank",
+    "SPC y e": {
+      "name": "Yank error at point",
+      "command": "errorLens.copyProblemMessage"
+    },
+    "SPC y h": {
+      "name": "show clipboard history",
+      "command": "clipboard-manager-with-cycling.editor.pickAndPaste"
+    },
+
     "SPC t z": {
       "name": "Toggle Zen Mode",
       "command": "workbench.action.toggleZenMode"
@@ -157,6 +175,10 @@
     "SPC t w": {
       "name": "Toggle Line Wrap",
       "command": "editor.action.toggleWordWrap"
+    },
+    "SPC t t": {
+      "name": "Toggle Theme Mode",
+      "command": "workbench.action.toggleLightDarkThemes"
     },
     "SPC t C": {
       "name": "Toggle Copilot panel",
@@ -187,13 +209,13 @@
       "name": "Open Copilot Chat in editor",
       "command": "workbench.action.chat.openInEditor"
     },
-    "SPC o D": {
-      "name": "Open Dired here",
-      "command": "extension.dired.open"
-    },
     "SPC p n": {
       "name": "New Project",
       "command": "workbench.action.create "
+    },
+    "SPC p r": {
+      "name": "Run Project",
+      "command": "workbench.action.tasks.runTask"
     },
     ", h": "Hover...",
     ", h t": {
@@ -270,7 +292,6 @@
   "workbench.editor.editorActionsLocation": "hidden",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "workbench.colorTheme": "Solarized Dark",
   "editor.fontFamily": "MesloLGS NF",
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.defaultProfile.osx": "tmux-shell",
@@ -288,13 +309,34 @@
   },
   "github.copilot.editor.enableCodeActions": false,
   "protoc": {
-      "compile_on_save": false,
-      "options": [
-          "--proto_path=${workspaceRoot}/proto",
-          "--go_out=.",
-          "--go-grpc_out=."
-      ]
+    "compile_on_save": false,
+    "options": [
+      "--proto_path=${workspaceRoot}/proto",
+      "--go_out=.",
+      "--go-grpc_out=."
+    ]
   },
   "terminal.external.osxExec": "iTerm.app",
   "editor.renderWhitespace": "none",
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "leaderkey.darkModeBackgroundColor": "#0009",
+  "leaderkey.lightModeBackgroundColor": "#ccc9",
+  "leaderkey.darkModeHeaderColor": "var(--vscode-activityBar-background)",
+  "leaderkey.lightModeHeaderColor": "var(--vscode-activityBar-background)",
+  "leaderkey.darkModeKeyColor": "#cb4b16",
+  "leaderkey.lightModeKeyColor": "#cb4b16",
+  "leaderkey.darkModeArrowColor": "var(--vscode-ansi-cyan)",
+  "leaderkey.lightModeArrowColor": "var(--vscode-ansi-cyan)",
+  "leaderkey.darkModeCommandColor": "#ccc",
+  "leaderkey.lightModeCommandColor": "#859900",
+  "leaderkey.darkModeBorderColor": "#000",
+  "leaderkey.lightModeBorderColor": "#ddda",
+  "leaderkey.debounceDelay": 500,
+  "dired.ask_directory": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "chat.agent.maxRequests": 50
 }
